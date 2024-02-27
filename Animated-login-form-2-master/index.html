@@ -8,19 +8,19 @@
 </head>
 <body>
     <header>
-      <img src ="Capture.PNG">
-        <h3> Welcome to our Quiz Competition</h3>
+      <img src="Capture.PNG">
+        <h3>Welcome to our Quiz Competition</h3>
     </header>
     <div class="Form-box">
-        <form class="Login-form">
+        <form class="Login-form" onsubmit="auth(); return false;">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" required>
+                <input type="text" id="email" required>
                 <label>Email</label>
                 <ion-icon name="mail-outline"></ion-icon>
             </div>
             <div class="input-box">
-                <input type="password" required>
+                <input type="password" id="password" required>
                 <label>Password</label>
                 <ion-icon name="lock-closed-outline"></ion-icon>
             </div>
@@ -31,8 +31,8 @@
                 </span>
                 <h5>Forget password ?</h5>
             </div>
-            <button type="submit" class="submit-btn">Login </button>
-            <h5 class="Register-btn">Dont have an account ? Register</h5>
+            <button type="submit" class="submit-btn">Login</button>
+            <h5 class="Register-btn">Don't have an account? Register</h5>
         </form>
         <form class="Register-form">
             <h1>Register</h1>
@@ -57,23 +57,19 @@
             </div>
             <button type="submit" class="submit-btn">Submit</button>
 
-            <h5 class="Login-btn">Register before ? Login</h5>
+            <h5 class="Login-btn">Already registered? Login</h5>
         </form>
     </div>
-    <script> 
-function auth(){
-    var email = document.getElementById('email').value;
-    var password = document.getElementById("password").value;
-if(email =="abc" && password == "123")
-{
-    window.location.href("page2.html");
-}
-else{
-    alert("invalid");
-}
-};
-
-
+    <script>
+        function auth(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if(email === "abc" && password === "123") {
+                window.location.href = "page2.html";
+            } else {
+                alert("Invalid credentials");
+            }
+        }
     </script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
